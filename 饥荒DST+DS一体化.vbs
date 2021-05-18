@@ -1,30 +1,31 @@
 
-'---- ÃèÊö
-' 1.ÄãĞèÒªÏÂÔØºÃSteamÁª»ú°æÓë·şÎñÆ÷³ÌĞò
-' 2.»ñÈ¡ÄãµÄtoken,²¢°´³£¹æÁ÷³Ì´æ´¢ÄãµÄClusterÎÄ¼ş¼ĞÀï
+'---- æè¿°
+' 1.ä½ éœ€è¦ä¸‹è½½å¥½Steamè”æœºç‰ˆä¸æœåŠ¡å™¨ç¨‹åº
+' 2.è·å–ä½ çš„token,å¹¶æŒ‰å¸¸è§„æµç¨‹å­˜å‚¨ä½ çš„Clusteræ–‡ä»¶å¤¹é‡Œ
+' 3.æ¶‰åŠçš„æ‰€æœ‰è·¯å¾„éœ€è¦å…¶ç£ç›˜æ–‡ä»¶ç³»ç»Ÿä¸ºNTFS
 ' ----
-' !!!!ÇëĞŞ¸Ä´Ë½Å±¾ÖĞµÄ [×Ô¶¨ÒåÉè¶¨] ÄÚÈİÎª·ûºÏÄãµçÄÔ¼¢»ÄµÄÉè¶¨
+' !!!!è¯·ä¿®æ”¹æ­¤è„šæœ¬ä¸­çš„ [è‡ªå®šä¹‰è®¾å®š] å†…å®¹ä¸ºç¬¦åˆä½ ç”µè„‘é¥¥è’çš„è®¾å®š
 ' ----
-' ·ûºÏÒÔÉÏÒªÇó¼´¿É¼ÌĞø
-'©ª Ê¹ÄãÁª»ú°æÓë·şÎñÆ÷¹²ÓÃ ¼¯Èº(Cluster) Óë Ä£×é(MOD) ,´ÓÁª»ú°æ¶Ô[¼¯Èº]ĞŞ¸Ä,Óë´Ó·şÎñÆ÷ÔËĞĞÒ»ÖÂ
-'©ª ±ãÓÚ´ÓÁª»ú°æÅäÖÃ [¼¯Èº]»ò[Ä£×é] ÉèÖÃºó,¿ÉÖ±½Ó×÷Îª·şÎñÆ÷Æô¶¯.
-'©ª  µ±Äã´ÓÁª»ú°æĞÂ½¨\ĞŞ¸ÄÒ»¸ö[¼¯Èº],Íê³ÉºóÁª»ú°æÍË³ö¸Ã[¼¯Èº](Ò²¾ÍÊÇ»Øµ½Ö÷½çÃæ)
-'©ª  ÔÙ´Ó´Ë´¦Æô¶¯·şÎñÆ÷,»òÄã×Ô¼ºµÄ·½Ê½Æô¶¯
-'©ª  Èç¹û ĞÂÔö\É¾³ı Ä£×é,ÔÙÆô¶¯Ç°Ö´ĞĞÒ»´Î [2.Í¬²½MOD]
-'©ª
+' ç¬¦åˆä»¥ä¸Šè¦æ±‚å³å¯ç»§ç»­
+'â”† ä½¿ä½ è”æœºç‰ˆä¸æœåŠ¡å™¨å…±ç”¨ é›†ç¾¤(Cluster) ä¸ æ¨¡ç»„(MOD) ,ä»è”æœºç‰ˆå¯¹[é›†ç¾¤]ä¿®æ”¹,ä¸ä»æœåŠ¡å™¨è¿è¡Œä¸€è‡´
+'â”† ä¾¿äºä»è”æœºç‰ˆé…ç½® [é›†ç¾¤]æˆ–[æ¨¡ç»„] è®¾ç½®å,å¯ç›´æ¥ä½œä¸ºæœåŠ¡å™¨å¯åŠ¨.
+'â”†  å½“ä½ ä»è”æœºç‰ˆæ–°å»º\ä¿®æ”¹ä¸€ä¸ª[é›†ç¾¤],å®Œæˆåè”æœºç‰ˆé€€å‡ºè¯¥[é›†ç¾¤](ä¹Ÿå°±æ˜¯å›åˆ°ä¸»ç•Œé¢)
+'â”†  å†ä»æ­¤å¤„å¯åŠ¨æœåŠ¡å™¨,æˆ–ä½ è‡ªå·±çš„æ–¹å¼å¯åŠ¨
+'â”†  å¦‚æœ æ–°å¢\åˆ é™¤ æ¨¡ç»„,å†å¯åŠ¨å‰æ‰§è¡Œä¸€æ¬¡ [2.åŒæ­¥MOD]
+'â”†
 
 
 '----
 
-'Áª»ú°æÂ·¾¶
+'è”æœºç‰ˆè·¯å¾„
 Const Path_DST = "D:\_Game\Game_Steam\common\Don't Starve Together\"
-'·şÎñÆ÷Â·¾¶
+'æœåŠ¡å™¨è·¯å¾„
 Const Path_DSTDS = "D:\_Game\Game_Steam\common\Don't Starve Together Dedicated Server\"
-'Steam Workshop 322330Â·¾¶   Èç¹ûÃ»ÓĞ,Çë×ÔĞĞ´´½¨ÎÄ¼ş¼Ğ
+'Steam Workshop 322330è·¯å¾„   å¦‚æœæ²¡æœ‰,è¯·è‡ªè¡Œåˆ›å»ºæ–‡ä»¶å¤¹
 Const Path_322330 = "D:\_Game\Game_Steam\workshop\content\322330\"
-'ÎÄµµ KleiÂ·¾¶
+'æ–‡æ¡£ Kleiè·¯å¾„
 Const Path_Klei = "D:\_Doc\Klei\"
-'¼¯ÈºÎÄ¼ş¼ĞÈç¹ûÓĞ´¿Êı×ÖµÄÎÄ¼ş¼Ğ ¼´ÄãUIDÎÄ¼ş¼Ğ, ÓĞÔòĞ´
+'é›†ç¾¤æ–‡ä»¶å¤¹å¦‚æœæœ‰çº¯æ•°å­—çš„æ–‡ä»¶å¤¹ å³ä½ UIDæ–‡ä»¶å¤¹, æœ‰åˆ™å†™
 Const DST_UID = ""
 
 '---- init
@@ -36,7 +37,7 @@ Set GEOM_SD 		= CreateObject("Scripting.Dictionary")
 
 Set CS = New BaseCS
 
-Const ScriptName = "¼¢»ÄDST+DSÒ»Ìå»¯  by:Rex.Pack v:1.2"
+Const ScriptName = "é¥¥è’DST+DSä¸€ä½“åŒ–  by:Rex.Pack v:1.2"
 Dim ScriptFilePath, ScriptFullName, Command, NowSHE
 Dim Text
 
@@ -54,23 +55,23 @@ Path_Klei_DSTR = Path_Klei & "DoNotStarveTogetherRail\"
 Path_DST_Mod = Path_DST & "mods\"
 Path_DSTDS_Mod = Path_DSTDS & "mods\"
 
-Echo "©ª  ¼¢»ÄÁª»ú°æ¿ØÖÆÌ¨Áª»úÃüÁî²Î¿¼"
-Echo "©ª  c_connect(""127.0.0.1"",10999)  'Ãâ·À»ğÇ½"
-Echo "©ª  c_connect(""loaclhost"",10999)"
-Echo "©ª  c_connect(""s.es-geom.com"",10999,""password"")"
-Echo "---- È·ÈÏ"
-Echo "Áª»ú°æÂ·¾¶:" & IIf(tfFolder(Path_DST),"´æÔÚ","´íÎó")
-Echo "©¸ " & Path_DST_Mod
-Echo "·şÎñÆ÷Â·¾¶:" & IIf(tfFolder(Path_DSTDS),"´æÔÚ","´íÎó")
-Echo "©¸ " & Path_DSTDS_Mod
-Echo "WorkshopÂ·¾¶:" & IIf(tfFolder(Path_322330),"´æÔÚ","´íÎó")
-Echo "©¸ " & Path_322330
-Echo "ÎÄµµÂ·¾¶:" & IIf(tfFolder(Path_Klei),"´æÔÚ","´íÎó")
-Echo "©¸ " & Path_Klei
-Echo "ÎÄµµDSTÂ·¾¶:" & IIf(tfFolder(Path_Klei_DST),"´æÔÚ","´íÎó")
-Echo "©¸ " & Path_Klei_DST
-Echo "ÎÄµµDSTRÂ·¾¶:" & IIf(tfFolder(Path_Klei_DSTR),"´æÔÚ","´íÎó")
-Echo "©¸ " & Path_Klei_DSTR
+Echo "â”†  é¥¥è’è”æœºç‰ˆæ§åˆ¶å°è”æœºå‘½ä»¤å‚è€ƒ"
+Echo "â”†  c_connect(""127.0.0.1"",10999)  'å…é˜²ç«å¢™"
+Echo "â”†  c_connect(""loaclhost"",10999)"
+Echo "â”†  c_connect(""s.es-geom.com"",10999,""password"")"
+Echo "---- ç¡®è®¤"
+Echo "è”æœºç‰ˆè·¯å¾„:" & IIf(tfFolder(Path_DST),"å­˜åœ¨","é”™è¯¯")
+Echo "â”” " & Path_DST_Mod
+Echo "æœåŠ¡å™¨è·¯å¾„:" & IIf(tfFolder(Path_DSTDS),"å­˜åœ¨","é”™è¯¯")
+Echo "â”” " & Path_DSTDS_Mod
+Echo "Workshopè·¯å¾„:" & IIf(tfFolder(Path_322330),"å­˜åœ¨","é”™è¯¯")
+Echo "â”” " & Path_322330
+Echo "æ–‡æ¡£è·¯å¾„:" & IIf(tfFolder(Path_Klei),"å­˜åœ¨","é”™è¯¯")
+Echo "â”” " & Path_Klei
+Echo "æ–‡æ¡£DSTè·¯å¾„:" & IIf(tfFolder(Path_Klei_DST),"å­˜åœ¨","é”™è¯¯")
+Echo "â”” " & Path_Klei_DST
+Echo "æ–‡æ¡£DSTRè·¯å¾„:" & IIf(tfFolder(Path_Klei_DSTR),"å­˜åœ¨","é”™è¯¯")
+Echo "â”” " & Path_Klei_DSTR
 Echo "----"
 
 Call Main()
@@ -85,11 +86,11 @@ Sub Main()
 	GEOM_SD.Add "0", ""
 	Text = ""
 	
-	InText "a: ÍË³ö"
-	InText "b: ²¿Êğ¼¯Èº"
-	InText "c: ²¿ÊğÄ£×é"
+	InText "a: é€€å‡º"
+	InText "b: éƒ¨ç½²é›†ç¾¤"
+	InText "c: éƒ¨ç½²æ¨¡ç»„"
 	InText "----"
-	InText "Ñ¡ÔñÆô¶¯µÄ¼¯Èº:"
+	InText "é€‰æ‹©å¯åŠ¨çš„é›†ç¾¤:"
 	
 	Set GEOM_TFO = GEOM_FSO.GetFolder(Path_Klei_DST & DST_UID).SubFolders
 	For Each GEOM_TempDataVar In GEOM_TFO
@@ -111,14 +112,14 @@ Sub Main()
 					End If
 				Next
 			End If
-			InText(I & ": " & GEOM_TempDataVar.Name & " - " & Cluster_Name & " - " & IIf(Cluster_OffLine="false","ÏßÉÏ","±¾µØ"))
-			InText(" ©À µØÃæ:" & IIf(tfFolder(GEOM_TempDataVar & "\Master"),"´æÔÚ","ÎŞ"))
-			InText(" ©À ¶´Ñ¨:" & IIf(tfFolder(GEOM_TempDataVar & "\Caves"),"´æÔÚ","ÎŞ"))
+			InText(I & ": " & GEOM_TempDataVar.Name & " - " & Cluster_Name & " - " & IIf(Cluster_OffLine="false","çº¿ä¸Š","æœ¬åœ°"))
+			InText(" â”œ åœ°é¢:" & IIf(tfFolder(GEOM_TempDataVar & "\Master"),"å­˜åœ¨","æ— "))
+			InText(" â”œ æ´ç©´:" & IIf(tfFolder(GEOM_TempDataVar & "\Caves"),"å­˜åœ¨","æ— "))
 			If tfFile(GEOM_TempDataVar & "\cluster_token.txt") Then
 				Set Token = GEOM_FSO.GetFile(GEOM_TempDataVar & "\cluster_token.txt")
-				InText(" ©¸ Token: " & Token.DateLastModified )
+				InText(" â”” Token: " & Token.DateLastModified )
 			Else
-				InText(" ©¸ Token: ÎŞ")
+				InText(" â”” Token: æ— ")
 			End If
 			
 		End If
@@ -130,31 +131,31 @@ Sub Main()
 	Case CM = ""
 	Case IsNumeric(CM)
 		If GEOM_SD.Exists(CM) Then
-			[Æô¶¯µØÃæÃüÁî] = "cmd /c Start" & _
-				" ""¼¢»Ä - µØÃæ""" & _
+			[å¯åŠ¨åœ°é¢å‘½ä»¤] = "cmd /c Start" & _
+				" ""é¥¥è’ - åœ°é¢""" & _
 				" /d" & _
 				" " & PathC34(Path_DSTDS & "bin\") & _
 				" cmd /t:0b /k  " & PathC34(Path_DSTDS & "bin\dontstarve_dedicated_server_nullrenderer") & _
 				" -console " & _
 				" -cluster " & PathC34(DST_UID & USplit(GEOM_SD.Item(CM),"\")) & _
 				" -shard Master"
-			Echo [Æô¶¯µØÃæÃüÁî]
-			Echo Run([Æô¶¯µØÃæÃüÁî])
+			Echo [å¯åŠ¨åœ°é¢å‘½ä»¤]
+			Echo Run([å¯åŠ¨åœ°é¢å‘½ä»¤])
 			
 			If tfFolder(GEOM_SD.Item(CM) & "\Caves") Then
-				[Æô¶¯¶´Ñ¨ÃüÁî] = "cmd /c Start" & _
-					" ""¼¢»Ä - ¶´Ñ¨""" & _
+				[å¯åŠ¨æ´ç©´å‘½ä»¤] = "cmd /c Start" & _
+					" ""é¥¥è’ - æ´ç©´""" & _
 					" /d" & _
 					" " & PathC34(Path_DSTDS & "bin\") & _
 					" cmd /t:0d /k  " & PathC34(Path_DSTDS & "bin\dontstarve_dedicated_server_nullrenderer") & _
 					" -console " & _
 					" -cluster " & PathC34(DST_UID & USplit(GEOM_SD.Item(CM),"\")) & _
 					" -shard Caves"
-				Echo [Æô¶¯¶´Ñ¨ÃüÁî]
-				Echo Run([Æô¶¯¶´Ñ¨ÃüÁî])
+				Echo [å¯åŠ¨æ´ç©´å‘½ä»¤]
+				Echo Run([å¯åŠ¨æ´ç©´å‘½ä»¤])
 			End If
 		Else
-			Echo "System: ÎŞ´Ë¼¯Èº."
+			Echo "System: æ— æ­¤é›†ç¾¤."
 		End If
 	Case Else
 		Select Case CM
@@ -166,7 +167,7 @@ Sub Main()
 End Sub
 
 Sub link_Cluster()
-	CS.Print "¾¯¸æ:½«»áÏÈÉ¾³ı " & Path_Klei_DSTR & " ÎÄ¼ş¼Ğ,ÇëÈ·±£ÆäÄÚÈİ²»ÔÙĞèÒª.(y\n)"
+	CS.Print "è­¦å‘Š:å°†ä¼šå…ˆåˆ é™¤ " & Path_Klei_DSTR & " æ–‡ä»¶å¤¹,è¯·ç¡®ä¿å…¶å†…å®¹ä¸å†éœ€è¦.(y\n)"
 	If CS.Input = "y" Then
 		Call Exec("cmd /c rd /q " & PathC34(Path_Klei_DSTR))
 		Call mklink(Path_Klei_DSTR, Path_Klei_DST)
@@ -176,19 +177,19 @@ End Sub
 Sub link_MOD()
 	Set GEOM_TFO = GEOM_FSO.GetFolder(Path_DSTDS_Mod).SubFolders
 	For Each GEOM_TempDataVar In GEOM_TFO
-		Echo "ÒÆ³ı:" & GEOM_TempDataVar
+		Echo "ç§»é™¤:" & GEOM_TempDataVar
 		Call Exec("cmd /c rd /q " & PathC34(GEOM_TempDataVar))
 	Next
 	
 	'Set GEOM_TFO = GEOM_FSO.GetFolder(Path_322330).SubFolders
 	'For Each GEOM_TempDataVar In GEOM_TFO
-	'	Echo "ÒÆ³ı:" & GEOM_TempDataVar
+	'	Echo "ç§»é™¤:" & GEOM_TempDataVar
 	'	Call Exec("cmd /c rd " & PathC34(GEOM_TempDataVar))
 	'Next
 	
 	Set GEOM_TFO = GEOM_FSO.GetFolder(Path_DST_Mod).SubFolders
 	For Each GEOM_TempDataVar In GEOM_TFO
-		Echo "Á´½Ó:" & PathC34(GEOM_TempDataVar)
+		Echo "é“¾æ¥:" & PathC34(GEOM_TempDataVar)
 		'If tfFolder(PathC34(Path_DSTDS_Mod & GEOM_TempDataVar.Name)) Then
 		Set state = mklink( PathC34(Path_DSTDS_Mod & GEOM_TempDataVar.Name), PathC34(GEOM_TempDataVar))
 		If state.Status = 0 Then state.Terminate
@@ -196,9 +197,9 @@ Sub link_MOD()
 
 	Set GEOM_TFO = GEOM_FSO.GetFolder(Path_322330).SubFolders
 	For Each GEOM_TempDataVar In GEOM_TFO
-		Echo "Á´½Ó:" & PathC34(GEOM_TempDataVar)
+		Echo "é“¾æ¥:" & PathC34(GEOM_TempDataVar)
 		If tfFolder(PathC34(Path_DSTDS_Mod & GEOM_TempDataVar.Name)) Then
-			Echo "Ìø¹ı:" & GEOM_TempDataVar.Name
+			Echo "è·³è¿‡:" & GEOM_TempDataVar.Name
 		Else
 			Set state = mklink( PathC34(Path_DSTDS_Mod & "workshop-" & GEOM_TempDataVar.Name), PathC34(GEOM_TempDataVar) )
 			If state.Status = 0 Then state.Terminate
@@ -223,7 +224,7 @@ Function ReadUTF8(filePath)
 	Stream.close
 End Function
 
-Sub Sleep(ByVal S)						'ÑÓ³Ù:ºÁÃë
+Sub Sleep(ByVal S)						'å»¶è¿Ÿ:æ¯«ç§’
   WScript.Sleep S
  End Sub
 
@@ -232,7 +233,7 @@ Function mklink(ByVal PathN,ByVal PathS)
 	'If state.Status = 0 Then state.Terminate
 End Function
 
-Function Exec(ByVal GEOM_ProgramPath)		'ÔËĞĞ³ÌĞò Exec ·½Ê½ ´ı¸Ä
+Function Exec(ByVal GEOM_ProgramPath)		'è¿è¡Œç¨‹åº Exec æ–¹å¼ å¾…æ”¹
   On Error Resume Next
   Set ExeCM = GEOM_WSS.Exec(GEOM_ProgramPath)
 	'echo ExeCM.StdOut.ReadAll
@@ -240,13 +241,13 @@ Function Exec(ByVal GEOM_ProgramPath)		'ÔËĞĞ³ÌĞò Exec ·½Ê½ ´ı¸Ä
   If EIF(True, False) = False Then Set Exec = Nothing Else Set Exec = ExeCM
  End Function
 
-Function Run(ByVal GEOM_ProgramPath)		'ÔËĞĞ³ÌĞò Run ·½Ê½ ´ı¸Ä
+Function Run(ByVal GEOM_ProgramPath)		'è¿è¡Œç¨‹åº Run æ–¹å¼ å¾…æ”¹
   On Error Resume Next
   GEOM_WSS.Run GEOM_ProgramPath
   Run = EIF(True, Err.Description)
  End Function
  
-Sub CScript(ByVal CSave)	'¸ÄÓÃCScriptËŞÖ÷Ä£Ê½ÖØĞÂÆô¶¯, CSave = True Then ±£ÁôCMD
+Sub CScript(ByVal CSave)	'æ”¹ç”¨CScriptå®¿ä¸»æ¨¡å¼é‡æ–°å¯åŠ¨, CSave = True Then ä¿ç•™CMD
 	If Not NowSHE = "cscript.exe" Then
 		GEOM_WSS.Run "cmd /t:e0 /q " & _
 			IIf(CSave = True, "/k", "/c") & _
@@ -257,7 +258,7 @@ Sub CScript(ByVal CSave)	'¸ÄÓÃCScriptËŞÖ÷Ä£Ê½ÖØĞÂÆô¶¯, CSave = True Then ±£ÁôCMD
 	End If
  End Sub
  
-Sub EndVBS()					'ÍË³ö½Å±¾
+Sub EndVBS()					'é€€å‡ºè„šæœ¬
 	WScript.Quit
  End Sub
 
@@ -270,24 +271,24 @@ Sub Echo(ByVal GEOM_TempData)
 	WScript.Echo GEOM_TempData
  End Sub
 
-Function IIf(ByVal GEOM_tf, ByVal GEOM_T, ByVal GEOM_F)	'VBµÄIIf
+Function IIf(ByVal GEOM_tf, ByVal GEOM_T, ByVal GEOM_F)	'VBçš„IIf
 	If GEOM_tf Then IIF = GEOM_T Else IIF = GEOM_F
  End Function
  
-Function EIF(ByVal GEOM_T, ByVal GEOM_F)	'³ı´í°æIIF
+Function EIF(ByVal GEOM_T, ByVal GEOM_F)	'é™¤é”™ç‰ˆIIF
 	EIF = IIf(Err.Number = 0, GEOM_T, GEOM_F)
 	If Not Err.Number = 0 Then Err.Clear
  End Function
  
-Sub MBT(ByVal GEOM_T)							'µ±TrueÊ±²»½øĞĞÌáÊ¾,ÒÔ±ãÉóÔÄ´úÂëÕıÈ·ĞÔ
+Sub MBT(ByVal GEOM_T)							'å½“Trueæ—¶ä¸è¿›è¡Œæç¤º,ä»¥ä¾¿å®¡é˜…ä»£ç æ­£ç¡®æ€§
 	If Not GEOM_T = True Then Echo GEOM_T
  End Sub
-Sub MBE(ByVal GEOM_TempData)					'µ±ÎŞ´íÊ±²»½øĞĞÌáÊ¾,ÒÔ±ãÉóÔÄ´úÂëÕıÈ·ĞÔ
+Sub MBE(ByVal GEOM_TempData)					'å½“æ— é”™æ—¶ä¸è¿›è¡Œæç¤º,ä»¥ä¾¿å®¡é˜…ä»£ç æ­£ç¡®æ€§
 	If Err.Number <> 0 Then Echo GEOM_TempData: Err.Clear
  End Sub
  
 
-Function PathC34(ByVal GEOM_FP)			'ÅĞ¶ÏÂ·¾¶ÖĞÊÇ·ñº¬ÓĞ¿Õ¸ñ,Ã»ÓĞÔòÈ¥³ı"ºÅ ÓĞÔòÌí¼ÓÉÏ""
+Function PathC34(ByVal GEOM_FP)			'åˆ¤æ–­è·¯å¾„ä¸­æ˜¯å¦å«æœ‰ç©ºæ ¼,æ²¡æœ‰åˆ™å»é™¤"å· æœ‰åˆ™æ·»åŠ ä¸Š""
 	If InStr(GEOM_FP, " ") = 0 Then
 		PathC34 = Replace(GEOM_FP, Chr(34), "")
 	Else
@@ -295,24 +296,24 @@ Function PathC34(ByVal GEOM_FP)			'ÅĞ¶ÏÂ·¾¶ÖĞÊÇ·ñº¬ÓĞ¿Õ¸ñ,Ã»ÓĞÔòÈ¥³ı"ºÅ ÓĞÔòÌí¼Ó
 	End If
  End Function
  
-Function PathCC(ByVal GEOM_FP)			'È¥³ıÂ·¾¶µÄ""ºÅ,ÎŞÂÛÓĞÃ»ÓĞ¿Õ¸ñ
+Function PathCC(ByVal GEOM_FP)			'å»é™¤è·¯å¾„çš„""å·,æ— è®ºæœ‰æ²¡æœ‰ç©ºæ ¼
 	PathCC = Replace(GEOM_FP, Chr(34), "")
  End Function
 
-Function tfFile(ByVal GEOM_FilePath)		'ÎÄ¼şÊÇ·ñ´æÔÚ
+Function tfFile(ByVal GEOM_FilePath)		'æ–‡ä»¶æ˜¯å¦å­˜åœ¨
 	tfFile = IIf(GEOM_FSO.FileExists(PathCC(GEOM_FilePath)) = False, False, True)
  End Function
  
-Function tfFolder(ByVal GEOM_FilePath)		'ÎÄ¼ş¼ĞÊÇ·ñ´æÔÚ
+Function tfFolder(ByVal GEOM_FilePath)		'æ–‡ä»¶å¤¹æ˜¯å¦å­˜åœ¨
 	tfFolder = IIf(GEOM_FSO.FolderExists(PathCC(GEOM_FilePath)) = False, False, True)
  End Function
  
-Function CopyFile(ByVal GEOM_FPA, ByVal GEOM_FPB, ByVal GEOM_TF)		'¸´ÖÆÎÄ¼ş
+Function CopyFile(ByVal GEOM_FPA, ByVal GEOM_FPB, ByVal GEOM_TF)		'å¤åˆ¶æ–‡ä»¶
   On Error Resume Next
   GEOM_FSO.CopyFile PathC34(GEOM_FPA), PathC34(GEOM_FPB), IIf(GEOM_TF = False, False, True)
   CopyFile = EIf(True, Err.Description)
  End Function
-Function CopyFolder(ByVal GEOM_FPA, ByVal GEOM_FPB, ByVal GEOM_TF)		'¸´ÖÆÎÄ¼ş¼Ğ
+Function CopyFolder(ByVal GEOM_FPA, ByVal GEOM_FPB, ByVal GEOM_TF)		'å¤åˆ¶æ–‡ä»¶å¤¹
   On Error Resume Next
   GEOM_FSO.CopyFolder PathC34(GEOM_FPA), PathC34(GEOM_FPB), IIf(GEOM_TF = False, False, True)
   CopyFolder = EIf(True, Err.Description)
@@ -342,7 +343,7 @@ Class BaseCS
         WScript.StdOut.WriteLine(Texts)
     End Sub
 
-    Function InPut()'ÊäÈëº¯Êı
+    Function InPut()'è¾“å…¥å‡½æ•°
 		On Error Resume Next
         GetInD = WScript.StdIn.ReadLine
 		If Err.Number <> 0 Then PrintL "": PrintL Err.Description
