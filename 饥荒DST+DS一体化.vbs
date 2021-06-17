@@ -97,7 +97,7 @@ Sub Main()
 		If Left(GEOM_TempDataVar.Name,8) = "Cluster_" Then
 			I = I + 1
 			GEOM_SD.Add CStr(I), GEOM_TempDataVar
-			Dim Cluster_Name,Cluster_OffLine
+			Dim Cluster_Name,Cluster_OffLine,Max_Players
 			
 			If tfFile(GEOM_TempDataVar & "\cluster.ini") Then
 				For Each Line In Split(ReadUTF8(GEOM_TempDataVar & "\cluster.ini"), vbCrLf)
@@ -108,11 +108,13 @@ Sub Main()
 							Cluster_Name = Trim(TempData(1))
 						Case "offline_cluster"
 							Cluster_OffLine = LCase(Trim(TempData(1)))
+						Case "max_players"
+							Max_Players = Trim(TempData(1))
 						End Select
 					End If
 				Next
 			End If
-			InText(I & ": " & GEOM_TempDataVar.Name & " - " & Cluster_Name & " - " & IIf(Cluster_OffLine="false","线上","本地"))
+			InText(I & ": " & GEOM_TempDataVar.Name & " | " & Cluster_Name & " | " & IIf(Cluster_OffLine="false","线上","本地")) & " | " & "人数上限:" & Max_Players
 			InText(" ├ 地面:" & IIf(tfFolder(GEOM_TempDataVar & "\Master"),"存在","无"))
 			InText(" ├ 洞穴:" & IIf(tfFolder(GEOM_TempDataVar & "\Caves"),"存在","无"))
 			If tfFile(GEOM_TempDataVar & "\cluster_token.txt") Then
@@ -126,9 +128,10 @@ Sub Main()
 	Next
 	
 	
-	CM = Trim(InputBox(Text, ScriptName))
+	CM = Trim(InputBox(Text, ScriptName,"",0,0))
 	Select Case True
 	Case CM = ""
+	Case CM = "0"
 	Case IsNumeric(CM)
 		If GEOM_SD.Exists(CM) Then
 			[启动地面命令] = "cmd /c Start" & _
