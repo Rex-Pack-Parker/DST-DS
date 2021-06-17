@@ -83,7 +83,6 @@ Sub Main()
 	GEOM_SD.Add "a", "EndVBS"
 	GEOM_SD.Add "b", "link_Cluster"
 	GEOM_SD.Add "c", "link_MOD"
-	GEOM_SD.Add "0", ""
 	Text = ""
 	
 	InText "a: 退出"
@@ -93,9 +92,9 @@ Sub Main()
 	InText "选择启动的集群:"
 	
 	Set GEOM_TFO = GEOM_FSO.GetFolder(Path_Klei_DST & DST_UID).SubFolders
+	I = 0
 	For Each GEOM_TempDataVar In GEOM_TFO
 		If Left(GEOM_TempDataVar.Name,8) = "Cluster_" Then
-			I = I + 1
 			GEOM_SD.Add CStr(I), GEOM_TempDataVar
 			Dim Cluster_Name,Cluster_OffLine,Max_Players
 			
@@ -114,7 +113,7 @@ Sub Main()
 					End If
 				Next
 			End If
-			InText(I & ": " & GEOM_TempDataVar.Name & " | " & Cluster_Name & " | " & IIf(Cluster_OffLine="false","线上","本地")) & " | " & "人数上限:" & Max_Players
+			InText(I+1 & ": " & GEOM_TempDataVar.Name & " | " & Cluster_Name & " | " & IIf(Cluster_OffLine="false","线上","本地")) & " | " & "人数上限:" & Max_Players
 			InText(" ├ 地面:" & IIf(tfFolder(GEOM_TempDataVar & "\Master"),"存在","无"))
 			InText(" ├ 洞穴:" & IIf(tfFolder(GEOM_TempDataVar & "\Caves"),"存在","无"))
 			If tfFile(GEOM_TempDataVar & "\cluster_token.txt") Then
@@ -124,6 +123,7 @@ Sub Main()
 				InText(" └ Token: 无")
 			End If
 			
+			I = I + 1
 		End If
 	Next
 	
@@ -131,9 +131,8 @@ Sub Main()
 	CM = Trim(InputBox(Text, ScriptName,"",0,0))
 	Select Case True
 	Case CM = ""
-	Case CM = "0"
 	Case IsNumeric(CM)
-		If GEOM_SD.Exists(CM) Then
+		If GEOM_SD.Exists(CM-1) Then
 			[启动地面命令] = "cmd /c Start" & _
 				" ""饥荒 - 地面""" & _
 				" /d" & _
