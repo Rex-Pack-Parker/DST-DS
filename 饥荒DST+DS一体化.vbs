@@ -95,7 +95,7 @@ Sub Main()
 	I = 0
 	For Each GEOM_TempDataVar In GEOM_TFO
 		If Left(GEOM_TempDataVar.Name,8) = "Cluster_" Then
-			GEOM_SD.Add CStr(I), GEOM_TempDataVar
+			GEOM_SD.Add "G" & CStr(I), GEOM_TempDataVar
 			Dim Cluster_Name,Cluster_OffLine,Max_Players
 			
 			If tfFile(GEOM_TempDataVar & "\cluster.ini") Then
@@ -132,26 +132,26 @@ Sub Main()
 	Select Case True
 	Case CM = ""
 	Case IsNumeric(CM)
-		If GEOM_SD.Exists(CM-1) Then
+		If GEOM_SD.Exists("G" & CM-1) Then
 			[启动地面命令] = "cmd /c Start" & _
 				" ""饥荒 - 地面""" & _
 				" /d" & _
 				" " & PathC34(Path_DSTDS & "bin\") & _
 				" cmd /t:0b /k  " & PathC34(Path_DSTDS & "bin\dontstarve_dedicated_server_nullrenderer") & _
 				" -console " & _
-				" -cluster " & PathC34(DST_UID & USplit(GEOM_SD.Item(CM),"\")) & _
+				" -cluster " & PathC34(DST_UID & USplit(GEOM_SD.Item("G" & CM-1),"\")) & _
 				" -shard Master"
 			Echo [启动地面命令]
 			Echo Run([启动地面命令])
 			
-			If tfFolder(GEOM_SD.Item(CM) & "\Caves") Then
+			If tfFolder(GEOM_SD.Item("G" & CM-1) & "\Caves") Then
 				[启动洞穴命令] = "cmd /c Start" & _
 					" ""饥荒 - 洞穴""" & _
 					" /d" & _
 					" " & PathC34(Path_DSTDS & "bin\") & _
 					" cmd /t:0d /k  " & PathC34(Path_DSTDS & "bin\dontstarve_dedicated_server_nullrenderer") & _
 					" -console " & _
-					" -cluster " & PathC34(DST_UID & USplit(GEOM_SD.Item(CM),"\")) & _
+					" -cluster " & PathC34(DST_UID & USplit(GEOM_SD.Item("G" & CM-1),"\")) & _
 					" -shard Caves"
 				Echo [启动洞穴命令]
 				Echo Run([启动洞穴命令])
