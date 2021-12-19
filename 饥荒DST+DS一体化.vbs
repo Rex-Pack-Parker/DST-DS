@@ -21,13 +21,14 @@
 Const Path_DST = "D:\_Game\Game_Steam\common\Don't Starve Together\"
 '服务器路径
 Const Path_DSTDS = "D:\_Game\Game_Steam\common\Don't Starve Together Dedicated Server\"
+'服务程序 0=32位  1=64位
+Const Svr_Bit = 0
 'Steam Workshop 322330路径   如果没有,请自行创建文件夹
 Const Path_322330 = "D:\_Game\Game_Steam\workshop\content\322330\"
 '文档 Klei路径
 Const Path_Klei = "D:\_Doc\Klei\"
 '集群文件夹如果有纯数字的文件夹 即你UID文件夹, 有则写
 Const DST_UID = ""
-
 '---- init
 
 Set GEOM_FSO		= CreateObject("Scripting.FileSystemObject")
@@ -45,6 +46,8 @@ NowSHE = LCase(USplit(WScript.FullName, "\"))
 ScriptFullName = WScript.ScriptFullName
 ScriptFilePath = Replace(WScript.ScriptFullName, WScript.ScriptName, "")
 
+BitPath = Array("bin\", "bin64\") 
+BitEXE = Array("dontstarve_dedicated_server_nullrenderer.exe", "dontstarve_dedicated_server_nullrenderer_x64.exe")
 
 CScript True
 '----Run
@@ -128,7 +131,7 @@ Sub Main()
 	Next
 	
 	
-	CM = Trim(InputBox(Text, ScriptName,"",0,0))
+	CM = Trim(InputBox(Text, ScriptName,"", 400, 800))
 	Select Case True
 	Case CM = ""
 	Case IsNumeric(CM)
@@ -136,8 +139,8 @@ Sub Main()
 			[启动地面命令] = "cmd /c Start" & _
 				" ""饥荒 - 地面""" & _
 				" /d" & _
-				" " & PathC34(Path_DSTDS & "bin\") & _
-				" cmd /t:0b /k  " & PathC34(Path_DSTDS & "bin\dontstarve_dedicated_server_nullrenderer") & _
+				" " & PathC34(Path_DSTDS & BitPath(Svr_Bit)) & _
+				" cmd /t:0b /k  " & PathC34(Path_DSTDS & BitPath(Svr_Bit) & BitEXE(Svr_Bit)) & _
 				" -console " & _
 				" -cluster " & PathC34(DST_UID & USplit(GEOM_SD.Item("G" & CM-1),"\")) & _
 				" -shard Master"
@@ -148,8 +151,8 @@ Sub Main()
 				[启动洞穴命令] = "cmd /c Start" & _
 					" ""饥荒 - 洞穴""" & _
 					" /d" & _
-					" " & PathC34(Path_DSTDS & "bin\") & _
-					" cmd /t:0d /k  " & PathC34(Path_DSTDS & "bin\dontstarve_dedicated_server_nullrenderer") & _
+					" " & PathC34(Path_DSTDS & BitPath(Svr_Bit)) & _
+					" cmd /t:0d /k  " & PathC34(Path_DSTDS & BitPath(Svr_Bit) & BitEXE(Svr_Bit)) & _
 					" -console " & _
 					" -cluster " & PathC34(DST_UID & USplit(GEOM_SD.Item("G" & CM-1),"\")) & _
 					" -shard Caves"
